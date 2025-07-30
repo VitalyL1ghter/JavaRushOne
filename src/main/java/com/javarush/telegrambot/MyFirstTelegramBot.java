@@ -26,11 +26,13 @@ public class MyFirstTelegramBot extends MultiSessionTelegramBot {
 
         if (getMessageText().equals("/start")) {
             setUserGlory(0);
+            sendPhotoMessageAsync("step_1_pic");
             sendTextMessageAsync(STEP_1_TEXT,
                     Map.of("Взломать холодильник ! + 20 славы", "button_one"));
         }
         if (getCallbackQueryButtonKey().equals("button_one")) {
             addUserGlory(20);
+            sendPhotoMessageAsync("step_2_pic");
             sendTextMessageAsync(STEP_2_TEXT,
                     Map.of("Взять колбаску ! + 20 славы", "button_two",
                             "Взять рыбу ! + 20 славы", "button_two",
@@ -38,11 +40,13 @@ public class MyFirstTelegramBot extends MultiSessionTelegramBot {
         }
         if (getCallbackQueryButtonKey().equals("button_two")) {
             addUserGlory(20);
+            sendPhotoMessageAsync("step_3_pic");
             sendTextMessageAsync(STEP_3_TEXT,
                     Map.of("Взломать робота-пылесос ! + 30 славы", "button_three"));
         }
         if (getCallbackQueryButtonKey().equals("button_three")) {
             addUserGlory(30);
+            sendPhotoMessageAsync("step_4_pic");
             sendTextMessageAsync(STEP_4_TEXT,
                     Map.of("отправить робота на зарядку ! + 30 славы ", "button_four",
                             "Покататься на роботе ! + 30 славы", "button_four",
@@ -50,12 +54,14 @@ public class MyFirstTelegramBot extends MultiSessionTelegramBot {
         }
         if (getCallbackQueryButtonKey().equals("button_four")) {
             addUserGlory(30);
+            sendPhotoMessageAsync("step_5_pic");
             sendTextMessageAsync(STEP_5_TEXT,
-                    Map.of("Взломать камеру Go-Pro ! + 40 славы", "button_five"));
+                    Map.of("Взять камеру Go-Pro ! + 40 славы", "button_five"));
 
         }
         if (getCallbackQueryButtonKey().equals("button_five")) {
             addUserGlory(40);
+            sendPhotoMessageAsync("step_6_pic");
             sendTextMessageAsync(STEP_6_TEXT,
                     Map.of("Надеть и включить камеру! + 40 славы", "button_six",
                             "Сбросить камеру! + 40 славы", "button_six",
@@ -64,12 +70,14 @@ public class MyFirstTelegramBot extends MultiSessionTelegramBot {
         }
         if (getCallbackQueryButtonKey().equals("button_six")) {
             addUserGlory(50);
+            sendPhotoMessageAsync("step_7_pic");
             sendTextMessageAsync(STEP_7_TEXT,
                     Map.of("Взломать пароль компьютера! + 50 славы", "button_seven"));
 
         }
         if (getCallbackQueryButtonKey().equals("button_seven")) {
             addUserGlory(50);
+            sendPhotoMessageAsync("step_8_pic");
             sendTextMessageAsync(STEP_8_TEXT,
                     Map.of("Подобрать пароль!", "button_eight",
                             "Выключить компьютер!", "button_eight",
@@ -77,6 +85,7 @@ public class MyFirstTelegramBot extends MultiSessionTelegramBot {
         }
 
         if (getCallbackQueryButtonKey().equals("button_eight")) {
+            sendPhotoMessageAsync("final_pic");
             sendTextMessageAsync(FINAL_TEXT);
         }
     }
